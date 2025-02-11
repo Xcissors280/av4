@@ -6,7 +6,7 @@ NC='\033[0m'
 echo ""
 echo -e "Auto Tools for MacOS on Apple Sillicon"
 echo ""
-PS3='Please enter your choice: '
+PS3='Choose an option: '
 options=("Bypass on Recovery" "Disable Notification (SIP)" "Disable Notification (Recovery)" "Check MDM Enrollment" "Close")
 select opt in "${options[@]}"; do
 	case $opt in
@@ -15,8 +15,8 @@ select opt in "${options[@]}"; do
 		if [ -d "/Volumes/Macintosh HD - Data" ]; then
    			diskutil rename "Macintosh HD - Data" "Data"
 		fi
-		echo -e "${GRN}Creating New User"
-        echo -e "${BLU}Press enter to confirm username"
+		echo -e "${GRN}Preparing Disk"
+        echo -e "${BLU}Creating New User"
   		echo -e "Enter Username (Default: MAC)"
 		read realName
   		realName="${realName:=MAC}"
